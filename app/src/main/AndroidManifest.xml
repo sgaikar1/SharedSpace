@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.emagicindia.realeastate" >
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".activity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme" >
+        <activity android:name="com.emagicindia.realeastate.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.SelectionProcessActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.CityActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.FeedActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.FeedDetailsActivity" >
+        </activity>
+        <activity android:name=".activity.HowItWorksActivity"
+            android:theme="@style/WelcomeScreenTheme"/>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.ListHouseActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.FeedbackActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.AboutActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.PolicyActivity" >
+        </activity>
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- Goolge Maps API Key -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCXctO9hmTv2PHGq3jO393Ohfreb0SUeak" />
+    </application>
+
+</manifest>

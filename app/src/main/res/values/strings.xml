@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">SharedSpace</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_explore">Explore</string>
+    <string name="nav_item_howitworks">How It Works</string>
+    <string name="nav_item_requirements">Post Your Requirements</string>
+    <string name="nav_item_listhouse">List Your House</string>
+    <string name="nav_item_mywhishlist">My Whishlist</string>
+    <string name="nav_item_notification">Notification</string>
+    <string name="nav_item_feedback">Feedback</string>
+    <string name="nav_item_policy">Tenancy Policies</string>
+    <string name="nav_item_about">About</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_explore</item>
+        <item>@string/nav_item_howitworks</item>
+        <item>@string/nav_item_requirements</item>
+        <item>@string/nav_item_listhouse</item>
+        <item>@string/nav_item_mywhishlist</item>
+        <item>@string/nav_item_notification</item>
+        <item>@string/nav_item_feedback</item>
+        <item>@string/nav_item_policy</item>
+        <item>@string/nav_item_about</item>
+    </string-array>
+
+    <string-array name="array_city">
+        <item>@string/mumbai</item>
+        <item>@string/pune</item>
+    </string-array>
+
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
+
+    <string name="mumbai">Mumbai</string>
+    <string name="pune">Pune</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_city">City</string>
+    <string name="change_location">Change Location</string>
+    <string name="search_homes">Search Homes</string>
+
+</resources>
