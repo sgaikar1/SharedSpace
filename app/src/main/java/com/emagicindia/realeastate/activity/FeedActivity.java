@@ -52,7 +52,7 @@ import static com.emagicindia.realeastate.utils.AppConfig.KEYPROPERTYITEMS;
 /**
  * Created by dell on 8/12/2016.
  */
-public class FeedActivity extends AppCompatActivity implements PropertyViewInterface, OnMapReadyCallback {
+public class FeedActivity extends AppCompatActivity implements PropertyViewInterface, OnMapReadyCallback,FeedsAdapter.OnItemClick {
     private static final String TAG = FeedActivity.class.getSimpleName();
     private FeedsAdapter adapter;
     private ArrayList<String> data;
@@ -96,6 +96,7 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         recyclerView.setLayoutManager(layoutManager);
+
         viewPager = (ClickableViewPager) findViewById(R.id.rv_horizontal_feeds);
 
         try {
@@ -168,13 +169,6 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
         MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-//        // check if map is created successfully or not
-//        if (googleMap == null) {
-//            Toast.makeText(getApplicationContext(),
-//                    "Sorry! unable to create maps", Toast.LENGTH_SHORT)
-//                    .show();
-//        }
     }
 
     @Override
@@ -253,6 +247,7 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
         ad.dismiss();
         this.propertyItems = propertyItems;
         adapter = new FeedsAdapter(mContext, propertyItems);
+        adapter.registerEvent(FeedActivity.this);
         recyclerView.setAdapter(adapter);
 
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
@@ -299,6 +294,11 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
     public void onDestroy() {
         super.onDestroy();
         propertyPresenter.onDestroy();
+    }
+
+    @Override
+    public void clickresponce(int position) {
+        openDetailedActivity(position);
     }
 
     public class PagerAdapter extends FragmentPagerAdapter {

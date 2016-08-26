@@ -24,6 +24,7 @@ import static com.emagicindia.realeastate.utils.AppConfig.BASE_URL;
 public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder> {
     private final Context mContext;
     private ArrayList<PropertyItem> android;
+    OnItemClick onItemClick;
 
     public FeedsAdapter(Context mContext, ArrayList<PropertyItem> android) {
         this.mContext =mContext;
@@ -37,7 +38,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(FeedsAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(FeedsAdapter.ViewHolder viewHolder, final int i) {
 
         viewHolder.tvRentAmount.setText("₹ "+android.get(i).getPropertyRent());
         viewHolder.tvTenantType.setText(android.get(i).getTenantType());
@@ -51,6 +52,12 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder> 
             .placeholder(R.mipmap.ic_launcher)
             .crossFade()
             .into(viewHolder.ivImage);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClick.clickresponce(i);
+            }
+        });
     }
 
     @Override
@@ -73,6 +80,14 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder> 
             ivImage = (ImageView)view.findViewById(R.id.iv_feed_img);
 
         }
+    }
+
+    public interface OnItemClick{
+        void clickresponce(int position);
+    }
+
+    public void registerEvent(OnItemClick onImageClick){
+        this.onItemClick = onImageClick;
     }
 
 }
