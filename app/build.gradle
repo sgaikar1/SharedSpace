@@ -43,6 +43,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     apt 'com.google.dagger:dagger-compiler:2.6'
     compile 'com.google.dagger:dagger:2.6'
+    compile "me.henrytao:smooth-app-bar-layout:24.1.1.0"
 
 
     compile 'com.vistrav:ask:2.4'

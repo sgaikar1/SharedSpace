@@ -1,14 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RatingBar
+    <ScrollView
+        android:layout_above="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="@string/how_is_your_experience_with_us"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_ratingtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20sp"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:text=""
+                android:textSize="30sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="1" />
+
+            <LinearLayout
+                android:id="@+id/ll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:id="@+id/tl_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:weightSum="2">
+
+                        <CheckBox
+                            android:id="@+id/cb_design"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rbtn_selector"
+                            android:button="@drawable/rbtn_selector"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="App Design"
+                            android:layout_weight="1"
+                            android:textColor="@drawable/rbtn_text_selector" />
+
+                        <CheckBox
+                            android:id="@+id/cb_features"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginStart="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rbtn_selector"
+                            android:button="@drawable/rbtn_selector"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:layout_weight="1"
+                            android:text="App Features"
+                            android:textColor="@drawable/rbtn_text_selector" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:weightSum="2">
+
+                        <CheckBox
+                            android:id="@+id/cb_care"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rbtn_selector"
+                            android:button="@drawable/rbtn_selector"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="Customer Care"
+                            android:layout_weight="1"
+                            android:textColor="@drawable/rbtn_text_selector" />
+
+                        <CheckBox
+                            android:id="@+id/cb_pricing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rbtn_selector"
+                            android:button="@drawable/rbtn_selector"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="20dp"
+                            android:text="Pricing"
+                            android:textColor="@drawable/rbtn_text_selector" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:weightSum="2">
+
+                        <CheckBox
+                            android:id="@+id/cb_availability"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rbtn_selector"
+                            android:button="@drawable/rbtn_selector"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="Availability"
+                            android:layout_weight="1"
+                            android:textColor="@drawable/rbtn_text_selector" />
+
+                        <CheckBox
+                            android:id="@+id/cb_others"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginStart="20dp"
+                            android:gravity="center"
+                            android:background="@drawable/rbtn_selector"
+                            android:button="@drawable/rbtn_selector"
+                            android:checked="false"
+                            android:padding="10dp"
+                            android:layout_weight="1"
+                            android:text="Others"
+                            android:textColor="@drawable/rbtn_text_selector" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <EditText
+                    android:id="@+id/et_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:maxLines="3"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="15sp"
+                    android:gravity="top"
+                    android:background="@color/button_background_theme_light"
+                    android:hint="Leave a Comment!"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:isIndicator="true"
-        android:numStars="5"
-        />
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="SUBMIT"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+</RelativeLayout>
