@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.emagic.libraries.layouts.SweetAlertDialog;
 import com.emagicindia.realeastate.Fragment.HorizontalFeedFragment;
@@ -91,6 +92,7 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
 
         mContext = this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.tv_toolbar_title);
         rlMapView = (RelativeLayout) findViewById(R.id.rl_map_view);
         recyclerView = (RecyclerView) findViewById(R.id.rv_feeds);
         recyclerView.setHasFixedSize(true);
@@ -156,7 +158,7 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
 
         // set the toolbar title
         getSupportActionBar().setTitle(city);
-
+        mTitle.setText(city);
         System.out.println(area + " " + city + " " + date + " " + booking + " " + tenant);
 
     }
@@ -224,10 +226,14 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
         return super.onOptionsItemSelected(item);
     }
 
-    private void setOptionTitle(int id, String cityname) {
+    private void setOptionTitle(int id, String viewtype) {
         if (menu != null) {
             MenuItem item = menu.findItem(id);
-            item.setTitle(cityname);
+            if(viewtype.equals("FEED")) {
+                item.setIcon(getResources().getDrawable(R.drawable.picture));
+            }else if(viewtype.equals("MAP")){
+                item.setIcon(getResources().getDrawable(R.drawable.marker));
+            }
         }
     }
 

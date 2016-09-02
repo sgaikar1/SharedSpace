@@ -22,9 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
+        <customfonts.MavenProTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:id="@+id/tv_city_location"
             android:drawableEnd="@android:drawable/ic_menu_mylocation"
             android:text="Use Current location"

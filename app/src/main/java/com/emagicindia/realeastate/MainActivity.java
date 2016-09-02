@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.emagicindia.realeastate.Database.DatabaseHelper;
 import com.emagicindia.realeastate.Fragment.FragmentDrawer;
@@ -69,7 +70,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         mContext=this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.tv_toolbar_title);
+        mTitle.setText("");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -107,13 +109,21 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         }
         setOptionTitle(R.id.action_city, citytext);
 
+        final MenuItem item = menu.findItem(R.id.action_city);
+        item.getActionView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cityIntent = new Intent(MainActivity.this,CityActivity.class);
+                startActivityForResult(cityIntent, 1);
+            }
+        });
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.action_city) {
             Intent cityIntent = new Intent(MainActivity.this,CityActivity.class);
             startActivityForResult(cityIntent, 1);
@@ -188,7 +198,9 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     {
         if(menu!=null) {
             MenuItem item = menu.findItem(id);
-            item.setTitle(cityname);
+//            item.setTitle(cityname);
+            TextView textView = (TextView) item.getActionView().findViewById(R.id.tv_row_menu);
+            textView.setText(cityname);
         }
     }
 

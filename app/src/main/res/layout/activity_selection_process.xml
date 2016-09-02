@@ -24,12 +24,12 @@
         android:layout_height="match_parent"
         android:padding="10dp"
         android:orientation="vertical">
-        <AutoCompleteTextView
+        <customfonts.MavenProAutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/actv_place_api"
             android:hint="Search by locality"/>
-        <TextView
+        <customfonts.MavenProTextView
             android:layout_width="wrap_content"
             android:id="@+id/tv_location"
             android:textSize="20sp"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             />
 
-        <TextView
+        <customfonts.MavenProTextView
             android:layout_width="wrap_content"
             android:id="@+id/tv_calender"
             android:textSize="20sp"
@@ -55,7 +55,7 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioGirl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                 android:text="GIRL"
                 android:textColor="@drawable/rbtn_text_selector" />
 
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioBoy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 android:padding="5dp"
                 android:text="BOY"
                 android:textColor="@drawable/rbtn_text_selector" />
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioFamily"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioBed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
                 android:text="Bed"
                 android:textColor="@drawable/rbtn_text_selector" />
 
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioRoom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
                 android:text="Room"
                 android:textColor="@drawable/rbtn_text_selector" />
 
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioFlat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                 android:text="Flat"
                 android:textColor="@drawable/rbtn_text_selector" />
 
-            <RadioButton
+            <customfonts.MavenProRadioButton
                 android:id="@+id/radioBanglow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
 
         </RadioGroup>
 
-        <Button
+        <customfonts.MavenProButton
             android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

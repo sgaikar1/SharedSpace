@@ -52,6 +52,8 @@ public class CityActivity extends AppCompatActivity implements CityAdapter.CityL
         mContext=this;
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.tv_toolbar_title);
+        mTitle.setText(getResources().getString(R.string.change_location));
 
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

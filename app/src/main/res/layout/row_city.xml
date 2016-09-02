@@ -4,14 +4,14 @@
     android:layout_height="wrap_content"
     android:clickable="true">
 
-    <TextView
+    <customfonts.MavenProTextView
         android:id="@+id/tv_row_city"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="30dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:textSize="15dp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

@@ -26,7 +26,7 @@
                 android:layout_margin="30dp"
                 android:src="@mipmap/ic_launcher"
                 android:id="@+id/iv_fav" />
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_rent_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
                 android:background="@color/mdtp_transparent_black"
                 android:textColor="@color/mdtp_white"
                 />
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_tenant_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp">
-        <TextView
+        <customfonts.MavenProTextView
             android:id="@+id/tv_address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:layout_below="@+id/tv_address1"
             android:orientation="horizontal"
             android:weightSum="3">
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_address2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 />
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_bedroom_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                 android:layout_weight="1"
                 android:maxLines="1"
                 />
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_bed_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

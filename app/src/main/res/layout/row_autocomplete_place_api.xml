@@ -2,17 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:orientation="vertical">
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="sff"
-    android:textSize="20sp"
-    android:id="@+id/autocompleteText"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <customfonts.MavenProTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/autocompleteText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="sff"
-        android:id="@+id/autocompleteText1"/>
+        android:textSize="20sp" />
+
+    <customfonts.MavenProTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/autocompleteText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sff" />
 </LinearLayout>

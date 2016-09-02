@@ -7,7 +7,7 @@
     tools:context="com.emagicindia.realeastate.Fragment.HomeFragment">
 
 
-    <TextView
+    <customfonts.MavenProTextView
         android:id="@+id/tv_select"
         android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
@@ -18,7 +18,7 @@
         android:text="Select Location"
         android:textStyle="bold"/>
 
-    <TextView
+    <customfonts.MavenProTextView
         android:layout_below="@id/tv_select"
         android:layout_centerInParent="true"
         android:layout_width="fill_parent"

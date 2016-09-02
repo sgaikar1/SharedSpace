@@ -8,5 +8,6 @@
         android:id="@+id/action_city"
         android:title="@string/action_city"
         android:orderInCategory="100"
-        app:showAsAction="always|withText" />
+        app:showAsAction="always|withText"
+        app:actionLayout="@layout/row_menu"/>
 </menu>

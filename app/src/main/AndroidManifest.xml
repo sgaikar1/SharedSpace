@@ -3,8 +3,9 @@
     package="com.emagicindia.realeastate" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <application
         android:name=".activity.MyApplication"
         android:allowBackup="true"
@@ -44,6 +45,19 @@
         <activity
             android:name="com.emagicindia.realeastate.activity.PolicyActivity" >
         </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.LoginActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.RegistrationActivity" >
+        </activity>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data

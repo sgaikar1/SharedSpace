@@ -1,6 +1,7 @@
 package com.emagicindia.realeastate.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -13,8 +14,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.emagicindia.realeastate.R;
+import com.emagicindia.realeastate.activity.LoginActivity;
 import com.emagicindia.realeastate.adapter.NavigationDrawerAdapter;
 import com.emagicindia.realeastate.model.NavDrawerItem;
 
@@ -33,6 +36,7 @@ public class FragmentDrawer extends Fragment {
     private View containerView;
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
+    private TextView tvLogin;
 
     public FragmentDrawer() {
 
@@ -69,6 +73,8 @@ public class FragmentDrawer extends Fragment {
         // Inflating view layout
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
+        tvLogin = (TextView) layout.findViewById(R.id.tv_login);
+
 
         adapter = new NavigationDrawerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
@@ -85,6 +91,14 @@ public class FragmentDrawer extends Fragment {
 
             }
         }));
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), LoginActivity.class);
+                startActivity(i);
+            }
+        });
 
         return layout;
     }

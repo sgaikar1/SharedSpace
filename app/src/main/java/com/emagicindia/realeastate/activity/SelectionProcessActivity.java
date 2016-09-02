@@ -76,6 +76,8 @@ public class SelectionProcessActivity extends AppCompatActivity implements DateP
 
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.tv_toolbar_title);
+        mTitle.setText("");
         getSupportActionBar().setTitle("");
 
         TextView tvLocation = (TextView)findViewById(R.id.tv_location);
@@ -398,6 +400,17 @@ public class SelectionProcessActivity extends AppCompatActivity implements DateP
             citytext="Mumbai";
         }
         setOptionTitle(R.id.action_city, citytext);
+
+        final MenuItem item = menu.findItem(R.id.action_city);
+        final TextView textView = (TextView) item.getActionView();
+
+        item.getActionView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cityIntent = new Intent(SelectionProcessActivity.this,CityActivity.class);
+                startActivityForResult(cityIntent, 1);
+            }
+        });
         return true;
     }
 
@@ -418,7 +431,9 @@ public class SelectionProcessActivity extends AppCompatActivity implements DateP
     {
         if(menu!=null) {
             MenuItem item = menu.findItem(id);
-            item.setTitle(cityname);
+//            item.setTitle(cityname);
+            TextView textView = (TextView) item.getActionView().findViewById(R.id.tv_row_menu);
+            textView.setText(cityname);
         }
     }
 

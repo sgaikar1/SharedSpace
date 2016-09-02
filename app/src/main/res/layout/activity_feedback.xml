@@ -2,8 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+    </LinearLayout>
 
     <ScrollView
+        android:layout_below="@+id/container_toolbar"
         android:layout_above="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -13,7 +25,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -25,7 +37,7 @@
                 android:text="@string/how_is_your_experience_with_us"
                 android:textSize="25sp" />
 
-            <TextView
+            <customfonts.MavenProTextView
                 android:id="@+id/tv_ratingtext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,7 +76,7 @@
                         android:layout_marginTop="20dp"
                         android:weightSum="2">
 
-                        <CheckBox
+                        <customfonts.MavenProCheckBox
                             android:id="@+id/cb_design"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -79,7 +91,7 @@
                             android:layout_weight="1"
                             android:textColor="@drawable/rbtn_text_selector" />
 
-                        <CheckBox
+                        <customfonts.MavenProCheckBox
                             android:id="@+id/cb_features"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -100,7 +112,7 @@
                         android:layout_marginTop="20dp"
                         android:weightSum="2">
 
-                        <CheckBox
+                        <customfonts.MavenProCheckBox
                             android:id="@+id/cb_care"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -115,7 +127,7 @@
                             android:layout_weight="1"
                             android:textColor="@drawable/rbtn_text_selector" />
 
-                        <CheckBox
+                        <customfonts.MavenProCheckBox
                             android:id="@+id/cb_pricing"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -136,7 +148,7 @@
                         android:layout_marginTop="20dp"
                         android:weightSum="2">
 
-                        <CheckBox
+                        <customfonts.MavenProCheckBox
                             android:id="@+id/cb_availability"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -151,7 +163,7 @@
                             android:layout_weight="1"
                             android:textColor="@drawable/rbtn_text_selector" />
 
-                        <CheckBox
+                        <customfonts.MavenProCheckBox
                             android:id="@+id/cb_others"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -169,7 +181,7 @@
 
                 </TableLayout>
 
-                <EditText
+                <customfonts.MavenProEditText
                     android:id="@+id/et_feedback"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -186,7 +198,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <Button
+    <customfonts.MavenProButton
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

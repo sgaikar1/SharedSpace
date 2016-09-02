@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -35,12 +36,18 @@ public class FeedbackActivity extends AppCompatActivity {
     private Button btnSubmit;
     private Context mContext;
     public int ratingCount = 0;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
         mContext = this;
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.tv_toolbar_title);
+        mTitle.setText(getResources().getString(R.string.nav_item_feedback));
+
 
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         tvRatingText = (TextView) findViewById(R.id.tv_ratingtext);

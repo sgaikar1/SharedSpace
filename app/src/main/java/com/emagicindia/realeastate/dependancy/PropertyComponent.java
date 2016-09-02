@@ -2,6 +2,8 @@ package com.emagicindia.realeastate.dependancy;
 
 import com.emagicindia.realeastate.MainActivity;
 import com.emagicindia.realeastate.activity.FeedActivity;
+import com.emagicindia.realeastate.activity.LoginActivity;
+import com.emagicindia.realeastate.activity.RegistrationActivity;
 
 import dagger.Component;
 
@@ -13,4 +15,6 @@ import dagger.Component;
 public interface PropertyComponent {
     void inject (FeedActivity feedActivity);
     void inject (MainActivity mainActivity);
+    void inject (LoginActivity loginActivity);
+    void inject (RegistrationActivity registrationActivity);
 }

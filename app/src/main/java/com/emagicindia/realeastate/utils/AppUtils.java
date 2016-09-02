@@ -34,6 +34,7 @@ public class AppUtils {
     private static SweetAlertDialog locationPermissionDialogue;
     private static AdressParameters adressParameters;
     private static ArrayList<AdressParameters> adressParameterses = new ArrayList<>();
+    private static SweetAlertDialog contactPermissionDialogue;
 
     public static List<AdressParameters> getCityAndSubLocality(final Context mContext, final Geocoder geocoder) {
         addressparameters = new ArrayList<String>(2);
@@ -164,5 +165,34 @@ public class AppUtils {
         if (location != null) {
            AppUtils.location = location;
         }
+    }
+
+    public static void showNoContactPermissionDialogue(final Context mContext) {
+        contactPermissionDialogue = new SweetAlertDialog(mContext, SweetAlertDialog.ERROR_TYPE);
+        contactPermissionDialogue.setCancelable(false);
+        contactPermissionDialogue.setTitleText("Permission not granted")
+                .setContentText("Do you want to go to the settings menu to grant permission?")
+                .setCancelText("No")
+                .setConfirmText("Settings")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismiss();
+                        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
+                        intent.setData(uri);
+                        ((Activity) mContext).startActivityForResult(intent, REQUEST_PERMISSION_SETTING);
+
+                    }
+                })
+                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismiss();
+                        contactPermissionDialogue.dismiss();
+//                        ((Activity)context).finish();
+                    }
+                })
+                .show();
     }
 }
