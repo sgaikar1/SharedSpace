@@ -3,6 +3,7 @@ package com.emagicindia.realeastate.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -19,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.emagic.libraries.layouts.SweetAlertDialog;
+import com.emagic.libraries.widgets.FloatingActionMenu;
+import com.emagicindia.realeastate.Fragment.FilterFragment;
 import com.emagicindia.realeastate.Fragment.HorizontalFeedFragment;
 import com.emagicindia.realeastate.R;
 import com.emagicindia.realeastate.adapter.FeedsAdapter;
@@ -77,6 +80,7 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
     private SweetAlertDialog ad;
     private ClickableViewPager viewPager;
     private GoogleMap googleMap;
+    private FloatingActionButton fabFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +102,7 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
         recyclerView.setLayoutManager(layoutManager);
+        fabFilter = (FloatingActionButton)findViewById(R.id.fab_filter);
 
         viewPager = (ClickableViewPager) findViewById(R.id.rv_horizontal_feeds);
 
@@ -108,6 +113,14 @@ public class FeedActivity extends AppCompatActivity implements PropertyViewInter
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        fabFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FeedActivity.this,FilterActivity.class);
+                startActivity(intent);
+            }
+        });
 
         viewPager.setOnViewPagerClickListener(new ClickableViewPager.OnClickListener() {
             @Override

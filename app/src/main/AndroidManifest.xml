@@ -51,12 +51,20 @@
         <activity
             android:name="com.emagicindia.realeastate.activity.RegistrationActivity" >
         </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.ForgetPasswordActivity" >
+        </activity>
+        <activity
+            android:name="com.emagicindia.realeastate.activity.FilterActivity" >
+        </activity>
 
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="@string/app_name" />
+
+
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

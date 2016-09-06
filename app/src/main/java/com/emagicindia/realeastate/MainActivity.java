@@ -254,5 +254,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         return retrofitInterface.getCity();
     }
 
+
+
 }
 

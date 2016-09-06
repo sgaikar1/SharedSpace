@@ -2,6 +2,7 @@ package com.emagicindia.realeastate.dependancy;
 
 import com.emagicindia.realeastate.MainActivity;
 import com.emagicindia.realeastate.activity.FeedActivity;
+import com.emagicindia.realeastate.activity.ForgetPasswordActivity;
 import com.emagicindia.realeastate.activity.LoginActivity;
 import com.emagicindia.realeastate.activity.RegistrationActivity;
 
@@ -17,4 +18,5 @@ public interface PropertyComponent {
     void inject (MainActivity mainActivity);
     void inject (LoginActivity loginActivity);
     void inject (RegistrationActivity registrationActivity);
+    void inject (ForgetPasswordActivity forgetPasswordActivity);
 }
